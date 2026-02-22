@@ -1,63 +1,61 @@
 Authors: Chloe Robinson and Camila Fienco
 Purpose: 
 * File contains 5 Example Trees to Traverse
-* Naming Format: T<tree>_G<generation>_N<node>
+* Naming Format: <name>_<tree>.<generation>.<node>
 * Only given the intermediate parent child relationiships
 
 # TREE 1: Balanced Tree
 
 TREE 1
 
-PERSON: Jen
+PERSON: Addy_1.1.1
 
-PERSON: Joe
-PERSON: Jeff
+PERSON: Brian_1.2.1
+PERSON: Cara_1.2.2
 
-PERSON: Joyce
-PERSON: T1_G3_N2
-PERSON: T1_G3_N3
-PERSON: T1_G3_N4
+PERSON: Dennise_1.3.1
+PERSON: Edward_1.3.2
+PERSON: Frank_1.3.3
+PERSON: Gwen_1.3.4
 
-PERSON: T1_G4_N1
-PERSON: T1_G4_N2
-PERSON: T1_G4_N3
-PERSON: T1_G4_N4
+PERSON: Hailey_1.4.1
+PERSON: Ian_1.4.2
+PERSON: Jake_1.4.3
+PERSON: Kim_1.4.4
 
-CHILD: Jen -> Joe
-CHILD: Jen -> Jeff
+CHILD: Addy_1.1.1 -> Brian_1.2.1
+CHILD: Addy_1.1.1 -> Cara_1.2.2
 
-CHILD: Joe -> Joyce
-CHILD: Joe -> T1_G3_N2
-CHILD: Jeff -> T1_G3_N3
-CHILD: Jeff -> T1_G3_N4
+CHILD: Brian_1.2.1 -> Dennise_1.3.1
+CHILD: Brian_1.2.1 -> Edward_1.3.2
+CHILD: Cara_1.2.2 -> Frank_1.3.3
+CHILD: Cara_1.2.2 -> Gwen_1.3.4
 
-CHILD: Joyce -> T1_G4_N1
-CHILD: T1_G3_N2 -> T1_G4_N2
-CHILD: T1_G3_N3 -> T1_G4_N3
-CHILD: T1_G3_N4 -> T1_G4_N4
-
-
+CHILD: Dennise_1.3.1 -> Hailey_1.4.1
+CHILD: Edward_1.3.2 -> Ian_1.4.2
+CHILD: Frank_1.3.3 -> Jake_1.4.3
+CHILD: Gwen_1.3.4 -> Kim_1.4.4
 
 # TREE 2: Deep Skewed Tree (Worst Case Stack)
 
 TREE 2
 
-PERSON: T2_G1_N1
-PERSON: T2_G2_N1
-PERSON: T2_G3_N1
-PERSON: T2_G4_N1
-PERSON: T2_G5_N1
-PERSON: T2_G6_N1
-PERSON: T2_G7_N1
-PERSON: T2_G8_N1
+PERSON: Nathan_2.1.1
+PERSON: Olivia_2.2.1
+PERSON: Sophia_2.3.1
+PERSON: Amelia_2.4.1
+PERSON: Mason_2.5.1
+PERSON: Kiki_2.6.1
+PERSON: Liam_2.7.1
+PERSON: Lucas_2.8.1
 
-CHILD: T2_G1_N1 -> T2_G2_N1
-CHILD: T2_G2_N1 -> T2_G3_N1
-CHILD: T2_G3_N1 -> T2_G4_N1
-CHILD: T2_G4_N1 -> T2_G5_N1
-CHILD: T2_G5_N1 -> T2_G6_N1
-CHILD: T2_G6_N1 -> T2_G7_N1
-CHILD: T2_G7_N1 -> T2_G8_N1
+CHILD: Nathan_2.1.1 -> Olivia_2.2.1
+CHILD: Olivia_2.2.1 -> Sophia_2.3.1
+CHILD: Sophia_2.3.1 -> Amelia_2.4.1
+CHILD: Amelia_2.4.1 -> Mason_2.5.1
+CHILD: Mason_2.5.1 -> Kiki_2.6.1
+CHILD: Kiki_2.6.1 -> Liam_2.7.1
+CHILD: Liam_2.7.1 -> Lucas_2.8.1
 
 
 
@@ -65,99 +63,96 @@ CHILD: T2_G7_N1 -> T2_G8_N1
 
 TREE 3
 
-PERSON: T3_G1_N1
+PERSON: Emily_3.1.1
 
-PERSON: T3_G2_N1
-PERSON: T3_G2_N2
-PERSON: T3_G2_N3
-PERSON: T3_G2_N4
-PERSON: T3_G2_N5
+PERSON: Noah_3.2.1
+PERSON: Mia_3.2.2
+PERSON: Liam_3.2.3
+PERSON: Ava_3.2.4
+PERSON: Sophia_3.2.5
 
-PERSON: T3_G3_N1
-PERSON: T3_G3_N2
-PERSON: T3_G3_N3
-PERSON: T3_G3_N4
-PERSON: T3_G3_N5
+PERSON: Jacob_3.3.1
+PERSON: Ella_3.3.2
+PERSON: Lucas_3.3.3
+PERSON: Kiki_3.3.4
+PERSON: Oliver_3.3.5
 
-CHILD: T3_G1_N1 -> T3_G2_N1
-CHILD: T3_G1_N1 -> T3_G2_N2
-CHILD: T3_G1_N1 -> T3_G2_N3
-CHILD: T3_G1_N1 -> T3_G2_N4
-CHILD: T3_G1_N1 -> T3_G2_N5
+CHILD: Emily_3.1.1 -> Noah_3.2.1
+CHILD: Emily_3.1.1 -> Mia_3.2.2
+CHILD: Emily_3.1.1 -> Liam_3.2.3
+CHILD: Emily_3.1.1 -> Ava_3.2.4
+CHILD: Emily_3.1.1 -> Sophia_3.2.5
 
-CHILD: T3_G2_N1 -> T3_G3_N1
-CHILD: T3_G2_N2 -> T3_G3_N2
-CHILD: T3_G2_N3 -> T3_G3_N3
-CHILD: T3_G2_N4 -> T3_G3_N4
-CHILD: T3_G2_N5 -> T3_G3_N5
+CHILD: Noah_3.2.1 -> Jacob_3.3.1
+CHILD: Mia_3.2.2 -> Ella_3.3.2
+CHILD: Liam_3.2.3 -> Lucas_3.3.3
+CHILD: Ava_3.2.4 -> Kiki_3.3.4
+CHILD: Sophia_3.2.5 -> Oliver_3.3.5
 
 # Tree 4: Irregular Mixed Structure
 
 TREE 4
+PERSON: John_4.1.1
 
-PERSON: T4_G1_N1
+PERSON: Sarah_4.2.1
+PERSON: Andrew_4.2.2
+PERSON: Jane_4.2.3
 
-PERSON: T4_G2_N1
-PERSON: T4_G2_N2
-PERSON: T4_G2_N3
+PERSON: David_4.3.1
+PERSON: Mia_4.3.2
+PERSON: Grace_4.3.3
 
-PERSON: T4_G3_N1
-PERSON: T4_G3_N2
-PERSON: T4_G3_N3
+PERSON: James_4.4.1
+PERSON: Lily_4.4.2
 
-PERSON: T4_G4_N1
-PERSON: T4_G4_N2
+PERSON: Ethan_4.5.1
 
-PERSON: T4_G5_N1
+CHILD: John_4.1.1 -> Sarah_4.2.1
+CHILD: John_4.1.1 -> Andrew_4.2.2
+CHILD: John_4.1.1 -> Jane_4.2.3
 
-CHILD: T4_G1_N1 -> T4_G2_N1
-CHILD: T4_G1_N1 -> T4_G2_N2
-CHILD: T4_G1_N1 -> T4_G2_N3
+CHILD: Sarah_4.2.1 -> David_4.3.1
+CHILD: Sarah_4.2.1 -> Mia_4.3.2
+CHILD: Andrew_4.2.2 -> Grace_4.3.3
 
-CHILD: T4_G2_N1 -> T4_G3_N1
-CHILD: T4_G2_N1 -> T4_G3_N2
-CHILD: T4_G2_N2 -> T4_G3_N3
+CHILD: Mia_4.3.2 -> James_4.4.1
+CHILD: Grace_4.3.3 -> Lily_4.4.2
 
-CHILD: T4_G3_N2 -> T4_G4_N1
-CHILD: T4_G3_N3 -> T4_G4_N2
-
-CHILD: T4_G4_N2 -> T4_G5_N1
-
+CHILD: Lily_4.4.2 -> Ethan_4.5.1
 
 
-# TREE 5: Wide + Deep Tgree
+# TREE 5: Wide + Deep gree
 
 TREE 5
+PERSON: Oliver_5.1.1
+PERSON: Emma_5.1.2
 
-PERSON: T5_G1_N1
-PERSON: T5_G1_N2
+PERSON: Noel_5.2.1
+PERSON: Liam_5.2.2
+PERSON: James_5.2.3
 
-PERSON: T5_G2_N1
-PERSON: T5_G2_N2
-PERSON: T5_G2_N3
+PERSON: Jack_5.3.1
+PERSON: Ava_5.3.2
+PERSON: Sam_5.3.3
+PERSON: Mia_5.3.4
 
-PERSON: T5_G3_N1
-PERSON: T5_G3_N2
-PERSON: T5_G3_N3
-PERSON: T5_G3_N4
+PERSON: Benjamin_5.4.1
+PERSON: Lily_5.4.2
+PERSON: Grace_5.4.3
 
-PERSON: T5_G4_N1
-PERSON: T5_G4_N2
-PERSON: T5_G4_N3
+PERSON: Ethan_5.5.1
 
-PERSON: T5_G5_N1
+CHILD: Oliver_5.1.1 -> Noel_5.2.1
+CHILD: Oliver_5.1.1 -> Liam_5.2.2
+CHILD: Emma_5.1.2 -> James_5.2.3
 
-CHILD: T5_G1_N1 -> T5_G2_N1
-CHILD: T5_G1_N1 -> T5_G2_N2
-CHILD: T5_G1_N2 -> T5_G2_N3
+CHILD: Noel_5.2.1 -> Jack_5.3.1
+CHILD: Noel_5.2.1 -> Ava_5.3.2
+CHILD: Liam_5.2.2 -> Sam_5.3.3
+CHILD: James_5.2.3 -> Mia_5.3.4
 
-CHILD: T5_G2_N1 -> T5_G3_N1
-CHILD: T5_G2_N1 -> T5_G3_N2
-CHILD: T5_G2_N2 -> T5_G3_N3
-CHILD: T5_G2_N3 -> T5_G3_N4
+CHILD: Ava_5.3.2 -> Benjamin_5.4.1
+CHILD: Sam_5.3.3 -> Lily_5.4.2
+CHILD: Mia_5.3.4 -> Grace_5.4.3
 
-CHILD: T5_G3_N2 -> T5_G4_N1
-CHILD: T5_G3_N3 -> T5_G4_N2
-CHILD: T5_G3_N4 -> T5_G4_N3
-
-CHILD: T5_G4_N3 -> T5_G5_N1
+CHILD: Grace_5.4.3 -> Ethan_5.5.1
