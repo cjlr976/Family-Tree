@@ -51,7 +51,7 @@ def main():
     tree = load_tree("example.txt", tree_choice)
 
     print(
-        "Options:\n1. List Descendants\n2. List Ancestors\n3. Number of Descendants\n 4. Number of Ancestors\n"
+        "Options:\n1. List Descendants\n2. List Ancestors\n3. Number of Descendants\n4. Number of Ancestors\n"
     )
 
     option = input("Enter option: ")
