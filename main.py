@@ -1,45 +1,95 @@
 '''
 Authors: Chloe Robinson and Camila Fienco
 Purpose: 
-* Main file to run examples of counting descendants in a family tree
-* Prompts user to select example file and person to count descendants for
+* Defines load and main function
 '''
 
-'''
-Recursive case
-Purpose: Recursively count number of descendants for a given person in a family tree
-'''
-def count_descendants(person):
+from family_tree import Tree
 
-    #Base case
-    if not hasattr(person, 'children'):
-        return 0
-    
-    count = len(person.children)
+def load_tree(filename, tree_number):
+    tree = Tree()
+    current_tree = None
 
-    for child in person.children:
-        count += count_descendants(child)
-    return count
+    with open(filename, "r") as file:
+        for line in file:
+            line = line.strip()
+
+            # Detect tree section
+            if line.startswith("TREE"):
+                current_tree = line.split()[1]
+                continue
+
+            # Skip if not selected tree
+            if current_tree != str(tree_number):
+                continue
+
+            # Process person lines
+            if line.startswith("PERSON:"):
+                name = line.split(":")[1].strip()
+                tree.add_person(name)
+
+            # Process relationship lines
+            elif line.startswith("CHILD:"):
+                parts = line.split(":")[1].strip()
+                parent_name, child_name = parts.split("->")
+                tree.add_relationship(parent_name.strip(), child_name.strip())
+
+    return tree
+
 
 '''
-Recursive case
-Purpose: Recursively get names of descendants for a given person in a family tree
-'''
-def get_descendants(person, descendants):
-    if not hasattr(person, 'children'):
-        return descendants
-    
-    for child in person.children:
-        descendants.append(child.name)
-        get_descendants(child, descendants)
-    return descendants
+Purpose:
+* Load family tree from file
 
+'''
 def main():
-    print("Select example file to run: ")
-    
+    tree_choice = input("Select family tree (1-5): ")
 
-    print("Input the person you want to count descendants for: ")
-    name = input()
+    if tree_choice not in ["1", "2", "3", "4", "5"]:
+        print("Invalid tree selection.")
+        return
+
+    tree = load_tree("example.txt", tree_choice)
+
+    print(
+        "\n1. Get descendants\n"
+        "2. Get ancestors\n"
+        "3. Get relationship"
+    )
+
+    option = input("Enter option: ")
+
+    if option == "1":
+        name = input("Enter person name: ")
+
+        if name in tree.people:
+            person = tree.people[name]
+            print(tree.get_descendants(person))
+        else:
+            print("Person not found.")
+
+    elif option == "2":
+        name = input("Enter person name: ")
+
+        if name in tree.people:
+            person = tree.people[name]
+            print(tree.get_ancestors(person))
+        else:
+            print("Person not found.")
+
+    elif option == "3":
+        name1 = input("Enter first person: ")
+        name2 = input("Enter second person: ")
+
+        if name1 in tree.people and name2 in tree.people:
+            p1 = tree.people[name1]
+            p2 = tree.people[name2]
+            print(tree.get_relationship(p1, p2))
+        else:
+            print("One or both persons not found.")
+
+    else:
+        print("Invalid option.")
 
 
 if __name__ == "__main__":

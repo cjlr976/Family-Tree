@@ -1,7 +1,10 @@
 Author: Chloe Robinson & Camila Fienco
 
 ## Problem Selection
-1. Given a family tree, use recursion to find the number of descendants a person has
+Given a family tree, use recursion to find:
+1. The number of descendants a person has
+2. The number of ascendants a person has
+3. 
 ## Recursive Design
 ### Base Case
 
@@ -16,7 +19,7 @@ Author: Chloe Robinson & Camila Fienco
 3. Each child is the root of a smaller family tree
 
 example.py
-```json
+```
 
 ```
 
@@ -32,8 +35,5 @@ example.py
 ## Deployment
 Windows CMD
 ```
-docker exec -it postgresql-server-container psql -U postgres
-```
-```
-uvicorn main:app --reload
+python main.py
 ```
