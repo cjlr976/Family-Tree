@@ -1,13 +1,11 @@
 Author: Chloe Robinson & Camila Fienco
 
 ## Problem Selection
-Given a family tree, use recursion to find:
-1. The number of descendants a person has
-2. The number of ascendants a person has
-3. 
+Given a family tree, use recursion to:
+1. Count and list the number of descendants a person has
+2. Cound and list the number of ascendants a person has
 ## Recursive Design
 ### Base Case
-
 ### Recursive Case
 ### Why Recursion is Appropriate
 

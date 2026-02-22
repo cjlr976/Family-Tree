@@ -5,8 +5,9 @@ Purpose:
 '''
 
 from family_tree import Tree
+import re
 
-#Purpose: Loads trees from example.txt file
+#Purpose: Loads trees from trees_example.txt file
 def load_tree(filename, tree_number):
     tree = Tree()
     current_tree = None
@@ -37,6 +38,9 @@ def load_tree(filename, tree_number):
 
     return tree
 
+def valid_name(name):
+    format = r"^[A-Za-z]+_\d+\.\d+\.\d+$"
+    return re.match(format, name) is not None
 
 '''
 Purpose: User interface to select tree and query relationships
@@ -48,12 +52,17 @@ def main():
         print("Invalid tree selection.")
         return
 
-    tree = load_tree("example.txt", tree_choice)
+    tree = load_tree("tree_examples.txt", tree_choice)
 
     print(
         "Options:\n1. List Descendants\n2. List Ancestors\n3. Number of Descendants\n4. Number of Ancestors\n"
     )
     name = input("Enter person name: ")
+    
+    if not valid_name(name):
+        print("Invalid name: Expected format: Firstname_Tree.Gen.Node")
+        return
+
     option = input("Enter option: ")
 
     if option == "1":

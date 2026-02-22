@@ -3,7 +3,7 @@ Authors: Chloe Robinson and Camila Fienco
 Purpose: 
 * Defines people in a family tree
 * Builds a family tree using an adjacency list
-* Recursively find a given person relationshisp in teh tree shuch as descendants, ancestors, and common ancestors   
+* Recursively find a given person relationshisp in the tree such as descendants, ancestors, and common ancestors   
 '''
 
 #Purpose: Define a person in a family tree
@@ -50,7 +50,7 @@ class Tree:
         count = 0
 
         # Recursive case
-        for child in person.children:
+        for child in person.children: # Add 1 for each child and recursively count their descendants
             count += 1 + self.countDescendants(child)
 
         return count
@@ -99,6 +99,7 @@ class Tree:
 
         # Recursive case
         for parent in person.parents:
+            print(f"Counting ancestors for {person.name}, found parent: {parent.name}")
             count += 1 + self.countAncestors(parent)
 
         return count
