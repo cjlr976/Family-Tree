@@ -53,42 +53,34 @@ def main():
     print(
         "Options:\n1. List Descendants\n2. List Ancestors\n3. Number of Descendants\n4. Number of Ancestors\n"
     )
-
+    name = input("Enter person name: ")
     option = input("Enter option: ")
 
     if option == "1":
-        name = input("Enter person name: ")
-
         if name in tree.people:
             person = tree.people[name]
-            print(tree.get_descendants(person))
+            print(tree.listDescendants(person))
         else:
             print("Person not found.")
 
     elif option == "2":
-        name = input("Enter person name: ")
-
         if name in tree.people:
             person = tree.people[name]
-            print(tree.get_ancestors(person))
+            print(tree.listAncestors(person))
         else:
             print("Person not found.")
 
     elif option == "3":
-        name = input("Enter person name: ")
-
         if name in tree.people:
             person = tree.people[name]
-            print(tree.count_descendants(person))
+            print(tree.countDescendants(person))
         else:
             print("Person not found.")
 
     elif option == "4":
-        name = input("Enter person name: ")
-
         if name in tree.people:
             person = tree.people[name]
-            print(tree.count_ancestors(person))
+            print(tree.countAncestors(person))
         else:
             print("Person not found.")
 

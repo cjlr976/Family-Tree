@@ -34,15 +34,15 @@ class Tree:
 
     #Function: Count Descendants
     '''
-    function count_descendants(person):
+    function countDescendants(person):
         if person has no children:
             return 0
         count = 0
         for each child in person's children:
-            count += 1 + count_descendants(child)
+            count += 1 + countDescendants(child)
         return count
     '''
-    def count_descendants(self, person):
+    def countDescendants(self, person):
         # Base case
         if not person.children:
             return 0
@@ -51,22 +51,22 @@ class Tree:
 
         # Recursive case
         for child in person.children:
-            count += 1 + self.count_descendants(child)
+            count += 1 + self.countDescendants(child)
 
         return count
 
     # Function: List Descendants
     '''
-    function get_descendants(person):
+    function listDescendants(person):
         if person has no children:
             return empty list
         descendants = empty list
         for each child in person's children:
             add child to descendants
-            get_descendants(child) and add to descendants
+            listDescendants(child) and add to descendants
         return descendants
     '''
-    def get_descendants(self, person):
+    def listDescendants(self, person):
         descendants = []
 
         # Base case
@@ -76,21 +76,21 @@ class Tree:
         # Recursive case
         for child in person.children:
             descendants.append(child.name)
-            descendants.extend(self.get_descendants(child))
+            descendants.extend(self.listDescendants(child))
 
         return descendants
     
     #Function: Count Ancestors
     '''
-    function count_ancestors(person):
+    function countAncestors(person):
         if person has no parents:
             return 0
         count = 0
         for each parent in person's parents:
-            count += 1 + count_ancestors(parent)
+            count += 1 + countAncestors(parent)
         return count
     '''
-    def count_ancestors(self, person):
+    def countAncestors(self, person):
         # Base case
         if not person.parents:
             return 0
@@ -99,22 +99,22 @@ class Tree:
 
         # Recursive case
         for parent in person.parents:
-            count += 1 + self.count_ancestors(parent)
+            count += 1 + self.countAncestors(parent)
 
         return count
 
     # Function: List Ancestors
     '''
-    function get_ancestors(person):
+    function listAncestors(person):
         if person has no parents:
             return empty list
         ancestors = empty list
         for each parent in person's parents:
             add parent to ancestors
-            get_ancestors(parent) and add to ancestors
+            listAncestors(parent) and add to ancestors
         return ancestors
     '''
-    def get_ancestors(self, person):
+    def listAncestors(self, person):
         ancestors = []
 
         # Base case
@@ -124,6 +124,6 @@ class Tree:
         # Recursive case
         for parent in person.parents:
             ancestors.append(parent.name)
-            ancestors.extend(self.get_ancestors(parent))
+            ancestors.extend(self.listAncestors(parent))
 
         return ancestors
