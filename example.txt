@@ -91,8 +91,6 @@ CHILD: T3_G2_N3 -> T3_G3_N3
 CHILD: T3_G2_N4 -> T3_G3_N4
 CHILD: T3_G2_N5 -> T3_G3_N5
 
-
-
 # Tree 4: Irregular Mixed Structure
 
 TREE 4

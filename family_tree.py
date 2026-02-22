@@ -60,6 +60,20 @@ class Tree:
             descendants.extend(self.get_descendants(child))
 
         return descendants
+    
+    #Function: Count Ancestors
+    def count_ancestors(self, person):
+        # Base case
+        if not person.parents:
+            return 0
+
+        count = 0
+
+        # Recursive case
+        for parent in person.parents:
+            count += 1 + self.count_ancestors(parent)
+
+        return count
 
     # Function: Get Ancestors
     def get_ancestors(self, person):
@@ -75,15 +89,3 @@ class Tree:
             ancestors.extend(self.get_ancestors(parent))
 
         return ancestors
-
-    # Function: Get Relationship
-    def get_relationship(self, person1, person2):
-        ancestors1 = set(self.get_ancestors(person1))
-        ancestors2 = set(self.get_ancestors(person2))
-
-        common = ancestors1.intersection(ancestors2)
-
-        if not common:
-            return "No relation"
-
-        return "Related through: " + ", ".join(common)
