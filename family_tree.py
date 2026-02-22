@@ -33,6 +33,15 @@ class Tree:
         parent.add_child(child)
 
     #Function: Count Descendants
+    '''
+    function count_descendants(person):
+        if person has no children:
+            return 0
+        count = 0
+        for each child in person's children:
+            count += 1 + count_descendants(child)
+        return count
+    '''
     def count_descendants(self, person):
         # Base case
         if not person.children:
@@ -46,7 +55,17 @@ class Tree:
 
         return count
 
-    # Function: Get Descendants
+    # Function: List Descendants
+    '''
+    function get_descendants(person):
+        if person has no children:
+            return empty list
+        descendants = empty list
+        for each child in person's children:
+            add child to descendants
+            get_descendants(child) and add to descendants
+        return descendants
+    '''
     def get_descendants(self, person):
         descendants = []
 
@@ -62,6 +81,15 @@ class Tree:
         return descendants
     
     #Function: Count Ancestors
+    '''
+    function count_ancestors(person):
+        if person has no parents:
+            return 0
+        count = 0
+        for each parent in person's parents:
+            count += 1 + count_ancestors(parent)
+        return count
+    '''
     def count_ancestors(self, person):
         # Base case
         if not person.parents:
@@ -75,7 +103,17 @@ class Tree:
 
         return count
 
-    # Function: Get Ancestors
+    # Function: List Ancestors
+    '''
+    function get_ancestors(person):
+        if person has no parents:
+            return empty list
+        ancestors = empty list
+        for each parent in person's parents:
+            add parent to ancestors
+            get_ancestors(parent) and add to ancestors
+        return ancestors
+    '''
     def get_ancestors(self, person):
         ancestors = []
 
